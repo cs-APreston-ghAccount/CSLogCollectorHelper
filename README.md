@@ -8,7 +8,7 @@ This provides you the following options:
   - Installs the log collector using either dpkg or rpm (depending on which is available on the distro)
     - ***NOTE***: The installation filename should be unchanged from when it was downloaded and it must be in the same directory as this script when ran
 - **SETUP**
-  - Apply some recommended settings for allowing the log collector on Linux, as mentioned in the LogScale documentation site
+  - Apply some recommended settings for the log collector, as mentioned in the LogScale documentation site
     1. Set the log collector service to start-up on boot
     2. Add the log collector to the 'adm' group
     3. Allow log collector to bind to standard ports (ie. Network ports 0-1023)
