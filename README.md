@@ -11,7 +11,7 @@ This provides you the following options:
   - Apply some recommended settings for the log collector, as mentioned in the LogScale documentation site
     1. Set the log collector service to start-up on boot
     2. Add the log collector to the 'adm' group
-    3. Allow log collector to bind to standard ports (ie. Network ports 0-1023)
+    3. Allow log collector to bind to standard ports (i.e. Network ports 0-1023)
 - **BACKUP**
   - Create a backup of the current configuration file
     - This is saved into the same directory as this script with the name "BACKUP_config.yaml"
