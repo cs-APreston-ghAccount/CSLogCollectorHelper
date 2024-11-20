@@ -27,7 +27,7 @@ This provides you the following options:
   - Quick view of the currently active configuration
     - Displays the configuration that the log collector is set to use in the output of the screen. Press the spacebar or 'ENTER' on your keyboard if this is more lines than your terminal window can show.
     - ***NOTE***: This is for display purposes only. Use the configuration option to make changes to the configuration file.
-  - Show debug logs (Stops the collector service if it is running, and attempts to restart it when it is finished)
+  - Show debug logs
     - This allows you to either display debug logs for the log collector within your terminal window, or save debug logs to a file in the current working directory with the date and time in the filename.
     - If the log collector service is already running, this stops it before running the debug logs process and then attempts to restart it once this is finished.
 
