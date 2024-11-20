@@ -36,7 +36,7 @@ Use this command to pull this file from Github onto your Linux host:
 `curl -O "<link>"`
 
 Use this command to run the script:
-`sudo bash ./CSLogCollectorHelper.sh`
+`sudo bash CSLogCollectorHelper.sh`
 - Some of the actions taken within this script require elevated permissions. Because of this, you should always run this script using 'sudo'.
 - If you are unfamiliar with Linux commands, know that this command attempts to run the helper script from the current working directory. This command will not run the script if you are in a different directory.
 
