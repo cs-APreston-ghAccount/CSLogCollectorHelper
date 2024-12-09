@@ -157,19 +157,36 @@ do
             read -n 1 -s -r -p "Press any key to continue"
         fi
 
-        # Grant special permissions to the log collector binary
-        # allowing it to bind to ports < 1024 (ie. network ports 0-1023)
+        # Grant permissions to the log collector service allowing it 
+        # to bind to ports < 1024 (ie. network ports 0-1023)
         echo ""
         echo ""
         echo "===================="
         read -p "(Recommended) Allow log collector to bind to standard ports (ie. Network ports 0-1023)? [y,n] " yn22
 
         if [ $yn22 == "y" ]; then
-            setcap CAP_NET_BIND_SERVICE=+eip /usr/bin/humio-log-collector
-            echo ""
-            echo "===================="
-            echo "log collector allowed to bind to standard ports (ie. Network ports 0-1023)"
-            echo ""
+            if ! [ -d /etc/systemd/system/humio-log-collector.service.d ]; then
+                mkdir -p /etc/systemd/system/humio-log-collector.service.d/
+            fi
+            if ! [ -f /etc/systemd/system/humio-log-collector.service.d/override.conf ]; then
+                echo "[Service]" > /etc/systemd/system/humio-log-collector.service.d/override.conf
+                echo "AmbientCapabilities=CAP_NET_BIND_SERVICE" >> /etc/systemd/system/humio-log-collector.service.d/override.conf
+                systemctl daemon-reload
+                echo ""
+                echo "===================="
+                echo "log collector allowed to bind to standard ports (ie. Network ports 0-1023)"
+                echo ""
+            else
+                echo ""
+                echo "===================="
+                echo "An override file for the humio-log-collector service already exists. Refer"
+                echo "to the instructions on the Falcon LogScale Documentation site to edit this"
+                echo "further than it already has been to allow access to standard ports."
+                echo ""
+                echo "SOURCE:"
+                echo "https://library.humio.com/falcon-logscale-collector/log-collector-install-custom-linux.html#log-collector-install-linux-binding"
+                echo ""
+            fi
             read -n 1 -s -r -p "Press any key to return to the main menu"
         else
             echo ""
@@ -412,7 +429,7 @@ do
         if [ $yn70 == "y" ]; then
             echo ""
             echo "===================="
-            cat /etc/humio-log-collector/config.yaml | more
+            cat /etc/humio-log-collector/config.yaml | more -e
             echo ""
             echo "===================="
             echo ""
