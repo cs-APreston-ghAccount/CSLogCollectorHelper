@@ -1,5 +1,5 @@
 # CrowdStrike Log Collector Helper
-
+**NOTE: This does not work with the FIPS version of the log collector.**
 ## Purpose
 Not everyone is a wizard with Linux commands. This project attempts to make interacting with CrowdStrike's Next-Gen SIEM log collector on Linux easier. The options provided here are not an exhaustive list of interations with the log collector. Instead, these are meant to provide enough for basic setup, use, and troubleshooting while using it.
 
