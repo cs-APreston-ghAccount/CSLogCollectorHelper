@@ -36,7 +36,7 @@ This provides you the following options:
 
 ## How to use this
 Use this command to pull this file from Github onto your Linux host:
-`curl -O "https://raw.githubusercontent.com/cs-APreston-ghAccount/CSLogCollectorHelper/refs/heads/main/CSLogCollectorHelper.sh"`
+`curl -O "https://raw.githubusercontent.com/cs-ap-ghAccount/CSLogCollectorHelper/refs/heads/main/CSLogCollectorHelper.sh"`
 
 Use this command to run the script:
 `sudo bash CSLogCollectorHelper.sh`
