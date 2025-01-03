@@ -1,6 +1,8 @@
 #!/bin/bash
 
 ##########
+# Version 1.0
+#
 # This script gives the user the following options for working with CrowdStrike's Next-Gen SIEM log collecter
 # 0) EXIT - Exit script
 # 1) INSTALLATION - Install the log collector
